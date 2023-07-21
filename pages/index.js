@@ -1,13 +1,21 @@
 import React from "react";
+import Link from "next/link";
+import Header from "../components/Header";
+import Head from "next/head";
 
 const Index = (props) => {
   return (
     <div>
-      <h1>Olá Next!</h1>
+      <Header />
+      <Head>
+        <title>Blog com NextJS!</title>
+      </Head>
       {props.data.map((post) => {
         return (
           <div key={post.id}>
-            <h3>{post.title}</h3>
+            <h3>
+              <Link href={"/blog/" + post.id}>{post.title}</Link>
+            </h3>
             <p>Fake short description</p>
           </div>
         );

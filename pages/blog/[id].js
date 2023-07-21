@@ -1,8 +1,14 @@
 import React from "react";
+import Header from "../../components/Header";
+import Head from "next/head";
 
 const Post = ({ data }) => {
   return (
     <div>
+      <Header />
+      <Head>
+        <title>{data.title}</title>
+      </Head>
       <h1>Post: {data.title}</h1>
       <p>{data.body}</p>
       {/* <pre>{JSON.stringify(props, null, 2)}</pre> */}
